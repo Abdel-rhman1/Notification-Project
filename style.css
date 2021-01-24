@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    padding:0
+}
+body{
+    
+    width:100%;
+    background-color: #f3f7f7;
+}
+.fhead{
+    font-family: SANS-SERIF;
+    text-align: center;
+    font-size: xxx-large;
+    margin-bottom: 12px;
+    margin-top:35px;
+    letter-spacing: 15px;
+}
+
+.generaldesc{
+/*    font-family: 'Courgette', cursive;*/
+    text-align: center;
+    font-size: 112%;
+}
+.outerbox{
+    width: 35%;
+    margin: 10px auto;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 20px;
+    background-color: #fff;
+    padding-top:0;
+}
+@media only screen and (max-width: 600px) {
+    .outerbox{
+        width: 75%;
+    }
+    .social img{
+        margin-bottom: 30px;
+        margin-left:45px;
+    }
+    .memberyou{
+        font-size:85%;
+    }
+    body{
+        background-color: red;
+    }
+
+}
+@media only screen and (min-width: 600px ) and (max-width:768px){
+    .outerbox{
+        width: 60%;
+    }
+    .social img{
+        margin-bottom: 30px;
+        margin-left:45px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width:992px) {
+    .outerbox{
+        width: 50%;
+    }
+}
+.signupt{
+    /*width: 54.5%;*/
+    text-align: center;
+    background-color: #f3f7f7;
+    height: 52px;
+    padding-top: 4px;
+    
+    margin-bottom: 45px;
+    border:2px solid transparent;
+    font-size: 160%;
+    cursor: pointer;
+}
+.sigand .row{
+    margin-right: -19px;
+    margin-left: -19px;
+}
+.sigin{
+   display: none; 
+}
+.form-control{
+    background-color: #f3f7f7 !important;
+}
+.logint{
+    /*width: 54.5%;*/
+    background-color: #f3f7f7;
+    height: 52px;
+    text-align: center;
+    margin-bottom: 45px;
+    padding-top:4px;
+    font-size: 160%;
+    cursor: pointer
+}
+.active{
+    background-color: #fff;
+    color:#000;
+    box-shadow: 0px 1px 19px #d2cde4;
+
+}
+.first{
+    background-color: transparent;
+    text-align: center;
+    font-size: large;
+    box-shadow: 2px 2px 5px #ef9;
+    cursor: pointer;
+    color: #fff;
+    margin-left: -20px;
+}
+.second{
+    background-color: transparent;
+    text-align: center;
+    font-size: large;
+    box-shadow: 2px 2px 5px #ef9;
+    cursor: pointer;
+    color: #fff;
+    margin-right: -20px
+}
+.outerbox input{
+    border-left: 2px solid transparent;
+}
+#show,
+#show2{
+    position: absolute;
+    top: 12px;
+    right: 30px;
+    z-index: 2;
+    font-size: 19px;
+    color:mediumvioletred;
+}
+.outerbox .input-group-addon{
+    background-color:#f3f7f7 ;
+}
+.memberyou{
+    font-size: 103%;
+    font-family: ui-monospace;
+}
+.customhr{
+    background-color: #c1c1c1;
+}
+.connectingwith{
+    text-align: center;
+    margin-top: 9px;
+    font-size: larger;
+    color: #c1c1c1;
+}
+#send{
+    
+}
+.social img{
+    height: 40px;
+}
+
+/*///////////////////////////////////index styling//////////////////////////////////*/
+.todo ,
+.doning,
+.done{
+    height: 100px;
+    background-color: #dcdcdc;
+    padding:5px;
+    margin-bottom: 30px;
+}
+.todo .todohead{
+    display: flex;
+}
+.option{
+    position: absolute;
+    right: -50px;
+    background: #fff;
+    width: 300px;
+    height: 325px;
+    z-index: 2;
+    border-radius: 3%;
+    text-transform: capitalize;
+    padding:5px;
+    top:40px;
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .option{
+        right: -80px;
+        width:250px;
+    }
+}
+.option .optionhead p{
+    display: inline-block;
+    text-align: center;
+    font-size:16px;
+    color:#888;
+}
+.option .optionhead span{
+    color:#888;
+    cursor: pointer;
+    font-size:17px;
+}
+.customizeline{
+    margin-top:0;
+    margin-bottom: 15px;
+}
+.optionbody div{
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding:5px;
+}
+.optionbody div:hover{
+    background-color:#e4dfdf;
+    padding:5px;
+}
+.todo .todobody{
+    margin-top:15px;
+}
+.choice{
+    font-size: 19px;
+    cursor: pointer;
+}
+.new{
+    height: 30px;
+    background-color: hsla(0,0%,100%,.24);
+    cursor: pointer;
+}
+.addingnewlist{
+    display: none;
+}
+body{
+    background-color: #4da0a0 !important;
+}
+.new:hover{
+
+}
+/*
+.firstinner{
+    width: 50%;
+    height: 55px;
+    background-color: red;
+    float: left;
+}
+.secondinner{
+    width: 50%;
+    height: 50ox;
+    height: 55px;
+    background-color: blue;
+    float: right;
+}
+.heading{
+    text-align: center;
+    margin-top: 40px;
+    color:beige;
+    font-size: xx-large;
+    font-family: ui-monospace;
+}
+.flex-container {
+   
+    margin-top:80px;
+}
+.flex-container input{
+    display: block;
+    width:400px;
+    height: 43px;
+    margin-bottom: 20px;
+    border: 2px solid skyblue;
+    border-radius: 23px;
+    padding: 12px;
+    background-color: transparent;
+}
+.flex-container input:focus{
+     border: 2px solid skyblue;
+    border-radius: none;
+}
+.flex-container input[type='submit']{
+    width: 120px;
+    font-size: 120%;
+    line-height: 0px;
+}
