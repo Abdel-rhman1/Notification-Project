@@ -97,26 +97,121 @@ $(function(){
         $(this).attr("value",value);
     });
     $('.choice').click(function(){
+        $('.option').hide();
         $(this).siblings('.option').show();
        //$(this).parent().parent().parent().parent().siblings('.col-sm-3').find('.option').hide();
-        $(this).parent().parent().parent().siblings('.col-sm-3').find('.option').hide();
+        // $(this).parent().parent().parent().siblings('.col-sm-3').find('.option').hide();
     });
     $('.terminale').click(function(){
         $(this).parent().parent().parent().hide(); 
     });
-     $(function () {
-        $(".todo").draggable();
-    });
+    
+    var i=0;
     $('.new').click(function(){
         $(this).hide();
         $(this).siblings('.addingnewlist').show();
     });
-    $('#adding').click(function(){
-        $($(".addingnewlist").parent()).after(
-            "<div class='col-md-3 col-sm-6 col-xs-6'><div class='new'><span><i class='fa fa-plus' aria-hidden='true'></i></span><span>Add anthor list</span></div><div class='todo addingnewlist'><div class='form-group'><input class='form-control' type='text' name='newlist' id='newlist' placeholder='Enter List title...'></div><input type='submit' class='btn btn-success btn btn-md' value='Add List' id='adding'><span class='terminal'>X</span></div></div>");
-        //$(".new").insertAfter($(".addingnewlist").parent());
+    $('.terminallist').click(function(){
+        $(this).parent().hide();
+        $(this).parent().siblings('.new').show();
     });
+    // var ele = 'new " +
+     $('.new' + i).click(function(){
+        $(this).hide();
+        $(this).siblings('.addingnewlist' + i).show();
+     });
+        function insertIntoBoard(Name){
+        $.ajax({
+            url : "manageBoard.php?action=addboard&name="+Name,
+            type : "GET",
+        });
+        location.reload();
+    }   
+    $('#adding').click(function(e){
+        if($(this).siblings('.form-group').children().val().length > 0){
+            //$("<div class='col-md-3 col-sm-6 col-xs-6'><div class='todo addingnewlist"+i+"'+" +"><div class='form-group'><input class='form-control' type='text' name='newlist"+i+"'+" +" id='newlist" + i +"'+" +"placeholder='Enter List title...'></div><input type='submit' class='btn btn-success btn btn-md' value='Add List' id='adding'><span class='terminal'>X</span></div></div>").insertBefore($(".addingnewlist").parent());
+            // $("<div class='col-md-3 col-sm-6 col-xs-6><div class='new'><span><i class='fa fa-plus' aria-hidden='true'></i></span><span>Add anthor list</span></div><div class='todo addingnewlist'><div class='form-group'><input class='form-control' type='text' name='newlist' id='newlist' placeholder='Enter List title...'></div><input type='submit' class='btn btn-success btn btn-md' value='Add List' id='adding'><span class='terminal'>X</span></div></div>")         
+            $('.addingnewlist').hide();
+            $('.new').show();
+            var value = $(this).siblings('.form-group').children().val();
+             //$('#newlist' + i).attr('value',value);
+             //$('#newlist').val("");
+             insertIntoBoard(value);
+             //var id = $(this).siblings('.form-group').children().attr('id');
 
+            i++;
+        }else{
+            e.preventDefault();
+        }
+    });
+    $('.thewholediv').click(function(){
+        $('.thewholediv').show();
+        $(this).hide();
+        $('.addingnewcardbody').hide();
+        $(this).siblings('.addingnewcardbody').show();
+    });
+    $('.cradterminal').click(function(){
+        $(this).parent().parent().parent().hide();
+        $(this).parent().parent().parent().siblings('.thewholediv').show();
+    });
+    function senddata(Name,board){
+        $.ajax({
+            url : "manageBoard.php?action=add&name="+Name+"&board="+board,
+            type : "GET",
+            cache:false,
+            success: function(result){
+                $("#test").html(result);
+            }
+        });
+    }
+    $('.sumbitthetitle').click(function(e){
+        var boardName = $(this).parent().parent().parent().parent().siblings('.todohead').children().children().val();
+        var textAreaContent = $(this).parent().siblings('textarea').val();
+        if($(this).parent().siblings('textarea').val().length >=3){
+            $("<div class='form-group' class='output'><input type='text' class='form-control forstyling' value='" + textAreaContent + "'></div>").insertBefore($(this).parent().parent());
+            senddata(textAreaContent,boardName);
+            $(this).parent().siblings('textarea').val("");
+            $.ajax({
+                url : "index.php",
+                method : "POST",
+                cache : false,
+            });
+        }else{
+            e.preventDefault();
+        }
+    });
+    $('.Movement').click(function(){
+        $(this).next('.showdirection').show(400); 
+    });
+    $('.Movement').dblclick(function(){
+         $(this).next('.showdirection').hide(400); 
+    })
+    function moveCard(targetListId , cardName){
+        $.ajax({
+                // url : "manageBoard.php?action=add&name="+Name+"&board="+board
+            url :"manageBoard.php?action=Moving&target="+targetListId+"&card="+cardName,
+            type:"GET",
+            cache : false,
+           success: function(result){
+                $("#test").html(result);
+            } 
+        });
+        $.ajax({
+            url : "index.php",
+            method : "POST",
+            cache : false,
+        });
+    }
+    $('.inputmove').click(function(){
+        var id = $(this).next('.hiddeninput').val();
+        var cardName = $(this).parent().siblings('.form-group').find('.forstyling').val();
+        moveCard(id , cardName);
+        window.location.reload();
+    });
+    // options codes //
+    $('.add').click(function(){
+        
+    });
     function getdata(){
         $.ajax({
             url : "sendnotification.php",
@@ -125,5 +220,5 @@ $(function(){
     }
    setInterval(function () {
         getdata();
-    },10000000)
+    },100000)
 });

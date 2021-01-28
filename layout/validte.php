@@ -5,6 +5,8 @@
         public string $password;
         public string $email;
         public string $phone;
+        public $object2;
+        public $object;
         public $arr;
         public function __construct(string $fname,string $lname,string $password,string $email,string $phon){
             $this->firstname = $fname;
@@ -12,6 +14,8 @@
             $this->password  = $password;
             $this->email     = $email;
             $this->phone     = $phon;
+            $this->object = new dealingsession();
+            $this->object2 = new mysqldatabase();
             $this->arr = array();
         }
         public function validation(){           
@@ -43,11 +47,10 @@
             if(empty($this->email)){
                 array_push($this->arr,"Email Must be greater than ");
             }
-            $object = new mysqldatabase();
-            $ret = $object->check($this->email,sha1($this->password));
+            //$object2 = new mysqldatabase();
+            $ret = $this->object2->check($this->email,sha1($this->password));
             if($ret){
-                $object = new dealingsession();
-                $retu = $object->startsession('id' ,$this->email);
+                $retu = $this->object->startsession('id' ,$this->email);
                 header('Location: index.php');
                 exit();
             }else{
@@ -61,7 +64,7 @@
                 $stat=$object->insertintothedatabase('user',$this->firstname,$this->lastname,$this->email,sha1($this->password),$this->phone);
                 if($stat==true){
                     $object = new dealingsession();
-                    $retu = $object->startsession('id' ,$this->email);
+                    $retu = $object->startsession('id' ,$this->object2->getID($this->email));
                     header('Location: index.php');
                     exit();
                 }

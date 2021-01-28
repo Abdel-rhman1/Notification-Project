@@ -7,6 +7,22 @@ body{
     width:100%;
     background-color: #f3f7f7;
 }
+::-webkit-scrollbar{
+    width:15px;
+}
+::-webkit-scrollbar-track {
+  background: #ebecf0;
+  border-radius: 10px;        /* color of the tracking area */
+}
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 10px;
+    height: 40px;
+    cursor: pointer;
+}
+.theupper{
+    margin-bottom: 30px;
+}
 .fhead{
     font-family: SANS-SERIF;
     text-align: center;
@@ -153,11 +169,15 @@ body{
 /*///////////////////////////////////index styling//////////////////////////////////*/
 .todo ,
 .doning,
-.done{
-    height: 100px;
-    background-color: #dcdcdc;
+.done {
+    height: auto;
+    background-color: #ebecf0;
     padding:5px;
     margin-bottom: 30px;
+    min-height: 100px;
+    max-height: 295px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .todo .todohead{
     display: flex;
@@ -167,13 +187,31 @@ body{
     right: -50px;
     background: #fff;
     width: 300px;
-    height: 325px;
+    height: 315px;
     z-index: 2;
     border-radius: 3%;
     text-transform: capitalize;
     padding:5px;
     top:40px;
     display: none;
+}
+/*::-webkit-scrollbar*/
+.option::-webkit-scrollbar{
+    width:6px;
+}
+.option::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 6px; 
+}
+.option::-webkit-scrollbar-thumb{
+    background-color: #ebecf0;
+    border-radius: 6px;
+    height: 8px !important;
+    cursor: pointer;
+}
+.doinginput{
+    background-color: #ebecf0 ! important;
+    border: none !important;
 }
 @media only screen and (max-width: 600px) {
     .option{
@@ -206,9 +244,6 @@ body{
     background-color:#e4dfdf;
     padding:5px;
 }
-.todo .todobody{
-    margin-top:15px;
-}
 .choice{
     font-size: 19px;
     cursor: pointer;
@@ -217,9 +252,15 @@ body{
     height: 30px;
     background-color: hsla(0,0%,100%,.24);
     cursor: pointer;
+    height: 30px;
+    padding: 5px;
+    border-radius: 2px;
 }
 .addingnewlist{
     display: none;
+}
+.terminallist{
+    cursor: pointer;
 }
 body{
     background-color: #4da0a0 !important;
@@ -227,6 +268,89 @@ body{
 .new:hover{
 
 }
+.thewholediv{
+    cursor: pointer;
+    height: 30px;
+    padding:5px;
+    width: 90%;
+    /* display: inline; */
+    float: left;
+}
+.thewholediv + span{
+    margin-top:10px;
+    height: 25px;
+    padding:5px;
+    cursor: pointer;
+}
+.thewholediv + span:hover{
+    background-color: hsla(0,0%,100%,.24);
+}
+.thewholediv:hover{
+    background-color: hsla(0,0%,100%,.24);
+}
+.addingnewcardbody{
+    display: none;
+}
+.addingnewcardbody textarea{
+    border-radius: 4px;
+    height: 70px !important;
+    resize: none;
+
+}
+.addingnewcardbutton{
+    margin-top:12px;
+}
+.cardoption{
+    font-size:25px
+}
+.cradterminal{
+    cursor: pointer;
+}
+.forstyling{
+    background-color: #ebecf0 ! important;
+    border:none !important;
+    height: 30px ! important;
+}
+.forstyling:hover{
+    background-color: hsla(0,0%,100%,.24);
+}
+.Movement{
+    position: relative;
+    top: -41px;
+    left: 190px;
+    cursor: pointer;
+}
+.showdirection div {
+    height: 30px;
+    line-height: 0px;
+    text-align: center;
+    width: 30%;
+    margin: 10px auto;
+
+}
+.showdirection{
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: -28px;
+    display: none;
+}
+.showdirection div:hover{
+    background-color: hsla(0,0%,100%,.24);
+}
+.gettingfromdataBase{
+    margin-top:-8px ! important;
+}
+/*/////////////////////////////////Navbar////////////////////////////////////////*/
+.navbar{
+    background-color: hsla(0,0%,100%,.24) ! important;
+    color:white !important;
+}
+.fontawsome{
+    font-size: 25px;
+    color:white ! important;
+}
+
 /*
 .firstinner{
     width: 50%;
