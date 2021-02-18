@@ -324,6 +324,35 @@
                         </div>
                     </div>
                     <div class="todobody">
+                         <div class="gettingfromdataBase">
+                                    <?php 
+                                        //$data = array();    
+                                         $data2 = $object->getdatafromBoard($Name);
+                                        while($item2 = mysqli_fetch_assoc($data2)){
+                                        ?>
+                                    <div 
+                                        class='form-group' 
+                                        id='output'>
+                                        <input 
+                                            type='text' 
+                                            class='form-control forstyling stylingdata' 
+                                            value="<?php echo $item2['Name'];?>">
+                                    </div>
+                                    <span class='Movement'>Move</span>
+                                       <div class='showdirection'>
+                                        <?php 
+                                            $lists = $object->selectAllLists();
+                                              while($list = mysqli_fetch_assoc($lists)){
+                                                echo"<p class='btn btn-primary inputmove'>".$list['Name']."</p>";
+                                                $id = $list['ID'];
+                                                 echo "<input type='text' class='hiddeninput' hidden value=\"$id\">";
+                                            }
+                                        ?>
+                                    </div>
+                                <?php }?>
+                                </div>
+                                
+
                         <div class='thewholediv'>
                         <span class="addnew pull-left addingnewcard">
                             &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
@@ -333,9 +362,7 @@
                             <i class="fa fa-files-o" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class='addingnewcardbody'>
-
-                            
+                    <div class='addingnewcardbody'>                           
                                 <div class='form-group'>
                                     <textarea class='form-control' placeholder="Enter a title for this card" id=""></textarea>
                                     <div class='addingnewcardbutton'> 
