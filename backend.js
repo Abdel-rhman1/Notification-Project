@@ -144,6 +144,9 @@ $(function(){
             e.preventDefault();
         }
     });
+    $('.addingnewboard').click(function(){
+        alert("adding new board");
+    })
     $('.thewholediv').click(function(){
         $('.thewholediv').show();
         $(this).hide();
@@ -209,8 +212,12 @@ $(function(){
         window.location.reload();
     });
     // options codes //
-    $('.add').click(function(){
-        
+    $('.optionbody .add').click(function(){
+        // $(this).siblings('.addingnewlist').show();
+        // $(this).thewholediv
+        $(this).parent().parent().parent().siblings('.todobody').find('.thewholediv').hide();
+        $(this).parent().parent().hide();
+        $(this).parent().parent().parent().siblings('.todobody').find('.addingnewcardbody').show();
     });
     function getdata(){
         $.ajax({

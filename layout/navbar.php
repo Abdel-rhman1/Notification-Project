@@ -31,7 +31,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class='fontawsome'><a href="#">
+        <li class='fontawsome addingnewboard'><a href="board.php">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </a></li>
         <li class='fontawsome'>

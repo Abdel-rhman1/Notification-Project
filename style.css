@@ -4,8 +4,8 @@
 }
 body{
     
-    width:100%;
     background-color: #f3f7f7;
+    overflow-x: auto;
 }
 ::-webkit-scrollbar{
     width:15px;
@@ -200,11 +200,11 @@ body{
     width:6px;
 }
 .option::-webkit-scrollbar-track{
-    background: white;
+    background: transparent;
     border-radius: 6px; 
 }
 .option::-webkit-scrollbar-thumb{
-    background-color: #ebecf0;
+    background-color: transparent;
     border-radius: 6px;
     height: 8px !important;
     cursor: pointer;
@@ -243,6 +243,7 @@ body{
 .optionbody div:hover{
     background-color:#e4dfdf;
     padding:5px;
+    cursor: pointer;
 }
 .choice{
     font-size: 19px;
@@ -340,6 +341,7 @@ body{
 }
 .gettingfromdataBase{
     margin-top:-8px ! important;
+    
 }
 /*/////////////////////////////////Navbar////////////////////////////////////////*/
 .navbar{
@@ -350,7 +352,27 @@ body{
     font-size: 25px;
     color:white ! important;
 }
-
+/*////////////////////////////////Board/////////////////*/
+.custom-container{
+    width:550px;
+    margin-top:30px;
+}
+.image{
+    width:85px;
+    height:85px;
+    background-color: hsla(0,0%,100%,.24);
+    cursor: pointer;
+}
+.image i{
+    font-size: 80px;
+    display: block;
+    margin: 35px 16px;
+}
+.change{
+    background-color: rgba(0,0,0,0.5);
+    height: 20px;
+    width:85px;
+}
 /*
 .firstinner{
     width: 50%;

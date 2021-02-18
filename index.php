@@ -47,9 +47,8 @@
         </div>
     </div>
     <div class='container'>
-        <div class='row'>
             <div class='col-md-3 col-sm-6 col-xs-6'>
-                <div class='todo'>
+                <div class='todo' draggable="true">
                     <div class='todohead'>
                         <div class='form-group col-sm-11'>
                             <input type="text" style="background-color: #ebecf0 !IMPORTANT ; border:none !IMPORTANT"
@@ -68,6 +67,11 @@
                                 <div class='add'>Add Card...</div>
                                 <div class='Copy'>Copy List...</div>
                                 <div class='Move'>Move List...</div>
+                                <!-- <div class='moving'>
+                                    <div class='movehead'>
+                                        <span>Move </span>
+                                    </div>
+                                </div> -->
                                 <hr class='customizeline'>
                                 <div class="moveall">Move all Cards in this List...</div>
                                 <div class="archiveall">Archive all Cards in this List...</div>
@@ -77,18 +81,7 @@
                         </div>
                     </div>
                     <div class="todobody">
-                        <div class='thewholediv'>
-                        <span class="addnew pull-left addingnewcard">
-                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
-                            Add a Card
-                        </span>
-                        <span class="pull-right">
-                            <i class="fa fa-files-o" aria-hidden="true"></i>
-                        </span>
-                        </div>
-
-                        <div class='addingnewcardbody'> 
-                                <div class="gettingfromdataBase">
+                            <div class="gettingfromdataBase">
                                     <?php 
                                         //$data = array();    
                                          $data= $object->getdatafromBoard('To do');
@@ -115,6 +108,18 @@
                                     </div>
                                 <?php } ?>
                                 </div>
+                        <div class='thewholediv'>
+                        <span class="addnew pull-left addingnewcard">
+                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+                            Add a Card
+                        </span>
+                        <span class="pull-right">
+                            <i class="fa fa-files-o" aria-hidden="true"></i>
+                        </span>
+                        </div>
+
+                        <div class='addingnewcardbody'> 
+   
                                 <div class='form-group'>
                                     <textarea class='form-control' placeholder="Enter a title for this card...." id=""></textarea>
                                     <div class='addingnewcardbutton'> 
@@ -155,17 +160,7 @@
                         </div>
                     </div>
                     <div class="todobody">
-                        <div class='thewholediv'>
-                        <span class="addnew pull-left addingnewcard">
-                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
-                            Add a Card
-                        </span>
-                        <span class="pull-right">
-                            <i class="fa fa-files-o" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <div class='addingnewcardbody'>
-                                 <div class="gettingfromdataBase">
+                                                         <div class="gettingfromdataBase">
                                     <?php 
                                         //$data = array();    
                                          $data= $object->getdatafromBoard('doing');
@@ -180,7 +175,7 @@
                                             value="<?php echo $item['Name'];?>">
                                             <!-- <span class="movement">Move to</span> -->
                                     </div>
-                                        <span class='Movement'>Move To</span>
+                                        <span class='Movement'>Move</span>
                                            <div class='showdirection'>
 
                                         <?php 
@@ -194,6 +189,16 @@
                                     </div>
                                 <?php }?>
                                 </div>
+                        <div class='thewholediv'>
+                        <span class="addnew pull-left addingnewcard">
+                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+                            Add a Card
+                        </span>
+                        <span class="pull-right">
+                            <i class="fa fa-files-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class='addingnewcardbody'>
                                 <div class='form-group'>
                                     <textarea class='form-control' placeholder="Enter title for this card" id="" value='Enter title for this card'></textarea>
                                     <div class='addingnewcardbutton'> 
@@ -234,17 +239,7 @@
                         </div>
                     </div>
                     <div class="todobody">
-                        <div class='thewholediv'>
-                        <span class="addnew pull-left addingnewcard">
-                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
-                            Add a Card
-                        </span>
-                        <span class="pull-right">
-                            <i class="fa fa-files-o" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <div class='addingnewcardbody'>
-                                <div class="gettingfromdataBase">
+                                                        <div class="gettingfromdataBase">
                                     <?php 
                                         //$data = array();    
                                          $data= $object->getdatafromBoard('done');
@@ -258,7 +253,7 @@
                                             class='form-control forstyling stylingdata' 
                                             value="<?php echo $item['Name'];?>">
                                     </div>
-                                    <span class='Movement'>Move To</span>
+                                    <span class='Movement'>Move</span>
                                        <div class='showdirection'>
                                         <?php 
                                             $lists = $object->selectAllLists();
@@ -271,6 +266,17 @@
                                     </div>
                                 <?php }?>
                                 </div>
+                        <div class='thewholediv'>
+                        <span class="addnew pull-left addingnewcard">
+                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
+                            Add a Card
+                        </span>
+                        <span class="pull-right">
+                            <i class="fa fa-files-o" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class='addingnewcardbody'>
+
                                 <!-- <form action="<?php //echo $_SERVER['PHP_SELF']; ?>" method="POST"> -->
                                 <div class='form-group'>
                                     <textarea class='form-control' placeholder="Enter a title for this card" id=""></textarea>
@@ -328,33 +334,7 @@
                         </span>
                     </div>
                     <div class='addingnewcardbody'>
-                                <div class="gettingfromdataBase">
-                                    <?php 
-                                        //$data = array();    
-                                         $data2= $object->getdatafromBoard($Name);
-                                        while($item2 = mysqli_fetch_assoc($data2)){
-                                        ?>
-                                    <div 
-                                        class='form-group' 
-                                        class='output'>
-                                        <input 
-                                            type='text' 
-                                            class='form-control forstyling stylingdata' 
-                                            value="<?php echo $item2['Name'];?>">
-                                    </div>
-                                    <span class='Movement'>Move To</span>
-                                    <div class='showdirection'>
-                                        <?php 
-                                            $lists = $object->selectAllLists();
-                                              while($list = mysqli_fetch_assoc($lists)){
-                                                echo"<p class='btn btn-primary inputmove'>".$list['Name']."</p>";
-                                                    $id = $list['ID'];
-                                                 echo "<input type='text' class='hiddeninput' hidden value=\"$id\">";
-                                            }
-                                        ?>
-                                    </div>
-                                <?php } ?>
-                                </div>
+
                             
                                 <div class='form-group'>
                                     <textarea class='form-control' placeholder="Enter a title for this card" id=""></textarea>
@@ -387,7 +367,6 @@
                 </div>
             </div>    
         </div>
-    </div>
     <?php 
         include "layout/footer.php";
     }
