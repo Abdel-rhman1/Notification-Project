@@ -10,7 +10,7 @@
     <?php 
         
     ?>
-    <div class="theupper">
+    <!-- div class="theupper">
         <div class='row'>
             <div class='col-sm-1'>
                 <i class="fa fa-database" aria-hidden="true"></i>
@@ -45,9 +45,10 @@
                 Menu
             </div>
         </div>
-    </div>
-    <div class='container'>
-            <div class='col-md-3 col-sm-6 col-xs-6'>
+    </div> -->
+    <div class="row">
+    <div class='container ' style="margin-top: 130px">
+            <div class='col-md-3 col-sm-4 col-xs-8'>
                 <div class='todo' draggable="true">
                     <div class='todohead'>
                         <div class='form-group col-sm-11'>
@@ -87,6 +88,7 @@
                                          $data= $object->getdatafromBoard('To do');
                                         while($item = mysqli_fetch_assoc($data)){
                                         ?>
+                                    <div class="withMovment"> 
                                     <div 
                                         class='form-group' 
                                         id='output'>
@@ -106,6 +108,7 @@
                                             }
                                         ?>
                                     </div>
+                                </div>
                                 <?php } ?>
                                 </div>
                         <div class='thewholediv'>
@@ -132,7 +135,7 @@
                     </div>
                 </div>
                 </div>
-            <div class='col-md-3 col-sm-6 col-xs-6'>
+            <div class='col-md-3 col-sm-4 col-xs-8'>
                 <div class='todo'>
                     <div class="todohead">
                         <div class="form-group col-sm-11">
@@ -160,12 +163,14 @@
                         </div>
                     </div>
                     <div class="todobody">
-                                                         <div class="gettingfromdataBase">
+                        <div class="gettingfromdataBase">
+
                                     <?php 
                                         //$data = array();    
                                          $data= $object->getdatafromBoard('doing');
                                         while($item = mysqli_fetch_assoc($data)){
                                         ?>
+                                <div class="withMovment">
                                     <div 
                                         class='form-group' 
                                         id='output'>
@@ -187,8 +192,10 @@
                                             }
                                         ?>
                                     </div>
-                                <?php }?>
                                 </div>
+                                <?php }?>
+                            </div>
+                            
                         <div class='thewholediv'>
                         <span class="addnew pull-left addingnewcard">
                             &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
@@ -211,7 +218,7 @@
                     </div>
                 </div>
             </div>
-            <div class='col-md-3 col-sm-6 col-xs-6'>
+            <div class='col-md-3 col-sm-4 col-xs-8'>
                     <div class='todo'>
                     <div class="todohead">
                         <div class="form-group col-sm-11">
@@ -296,7 +303,7 @@
                 while($item = mysqli_fetch_assoc($data)){ 
                         $Name = $item['Name'];
                     ?>
-                        <div class='col-md-3 col-sm-6 col-xs-6'>
+                        <div class='col-md-3 col-sm-4 col-xs-8'>
                     <div class='todo'>
                     <div class="todohead">
                         <div class="form-group col-sm-11">
@@ -376,7 +383,7 @@
                 </div>
             </div>
             <?php }?>
-            <div class='col-md-3 col-sm-6 col-xs-6 defoult'>
+            <div class='col-md-3 col-sm-4 col-xs-8'>
                 <div class='new'>
                     <span>
                         <i class="fa fa-plus" aria-hidden="true"></i>
@@ -394,6 +401,7 @@
                 </div>
             </div>    
         </div>
+    </div>
     <?php 
         include "layout/footer.php";
     }

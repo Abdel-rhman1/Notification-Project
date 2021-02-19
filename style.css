@@ -2,8 +2,15 @@
     margin:0;
     padding:0
 }
+body {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.row  .col-xs-8 {
+  display: inline-flex;
+  float: none !important;
+}
 body{
-    
     background-color: #f3f7f7;
     overflow-x: auto;
 }
@@ -11,14 +18,16 @@ body{
     width:15px;
 }
 ::-webkit-scrollbar-track {
-  background: #ebecf0;
-  border-radius: 10px;        /* color of the tracking area */
+  background: #3a5064;
+  border-radius: 10px;       /* color of the tracking area */
+  margin-bottom: 20px !important;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: white;
+    background-color: #d7d8da;
     border-radius: 10px;
     height: 40px;
     cursor: pointer;
+    margin-bottom: 20px !important;
 }
 .theupper{
     margin-bottom: 30px;
@@ -174,9 +183,8 @@ body{
     background-color: #ebecf0;
     padding:5px;
     margin-bottom: 30px;
-    min-height: 100px;
-    max-height: 295px;
-    overflow-y: auto;
+  
+    /*overflow-y: auto;*/
     overflow-x: hidden;
 }
 .todo .todohead{
@@ -252,6 +260,7 @@ body{
 .new{
     height: 30px;
     background-color: hsla(0,0%,100%,.24);
+    width: 100%;
     cursor: pointer;
     height: 30px;
     padding: 5px;
@@ -343,16 +352,29 @@ body{
     margin-top:-8px ! important;
     
 }
+.withMovment{
+    margin-bottom: -23px;
+}
+.withMovment input{
+    background-color: #fff !important;
+}
 /*/////////////////////////////////Navbar////////////////////////////////////////*/
 .navbar{
     background-color: hsla(0,0%,100%,.24) ! important;
     color:white !important;
+    width: 100%;
+    position: fixed !important;
+    margin-bottom: 200px ! important;
 }
 .fontawsome{
     font-size: 25px;
     color:white ! important;
 }
 /*////////////////////////////////Board/////////////////*/
+.container{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
 .custom-container{
     width:550px;
     margin-top:30px;

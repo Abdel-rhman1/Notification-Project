@@ -124,6 +124,7 @@ $(function(){
         $.ajax({
             url : "manageBoard.php?action=addboard&name="+Name,
             type : "GET",
+            cache : false,
         });
         location.reload();
     }   
