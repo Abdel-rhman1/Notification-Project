@@ -25,7 +25,8 @@ class mysqldatabase implements database{
         }
     }
     public function getID($mail):int{
-        $stat = "select ID from user where email='$mail'";
+        $this->openconnection('remember');
+        $stat = "select id from user where email='$mail'";
         $excute = mysqli_query($this->conn,$stat);
         $Res = mysqli_fetch_assoc($excute);
         return $Res['id'];

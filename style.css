@@ -1,14 +1,19 @@
 *{
     margin:0;
-    padding:0
+    padding:0;
+    /*font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;*/
+    /*font-size: 14px;*/
 }
 body {
   overflow-x: auto;
   white-space: nowrap;
 }
-.row  .col-xs-8 {
+.row  .col-xs-8 , 
+.row  .col-md-3 ,
+.row  .col-sm-4{
   display: inline-flex;
   float: none !important;
+  margin-right: -24px;
 }
 body{
     background-color: #f3f7f7;
@@ -183,7 +188,7 @@ body{
     background-color: #ebecf0;
     padding:5px;
     margin-bottom: 30px;
-  
+    border-radius: 6px;
     /*overflow-y: auto;*/
     overflow-x: hidden;
 }
@@ -265,6 +270,9 @@ body{
     height: 30px;
     padding: 5px;
     border-radius: 2px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 18px;
 }
 .addingnewlist{
     display: none;
@@ -282,7 +290,9 @@ body{
     cursor: pointer;
     height: 30px;
     padding:5px;
-    width: 90%;
+    padding-left:10px;
+    padding-right: 10px; 
+    width: 100%;
     /* display: inline; */
     float: left;
 }
@@ -296,7 +306,7 @@ body{
     background-color: hsla(0,0%,100%,.24);
 }
 .thewholediv:hover{
-    background-color: hsla(0,0%,100%,.24);
+    background-color: hsla(0,0%,100%,.87);
 }
 .addingnewcardbody{
     display: none;
@@ -305,7 +315,7 @@ body{
     border-radius: 4px;
     height: 70px !important;
     resize: none;
-
+    background-color: white !important;
 }
 .addingnewcardbutton{
     margin-top:12px;
@@ -323,6 +333,7 @@ body{
 }
 .forstyling:hover{
     background-color: hsla(0,0%,100%,.24);
+    cursor: pointer;
 }
 .Movement{
     position: relative;

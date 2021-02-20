@@ -177,9 +177,10 @@ $(function(){
             $(this).parent().siblings('textarea').val("");
             $.ajax({
                 url : "index.php",
-                method : "POST",
+                method : "GET",
                 cache : false,
             });
+            location.reload();
         }else{
             e.preventDefault();
         }
@@ -217,7 +218,7 @@ $(function(){
         var id = $(this).next('.hiddeninput').val();
         var cardName = $(this).parent().siblings('.form-group').find('.forstyling').val();
         moveCard(id , cardName);
-        window.location.reload();
+        location.reload();
     });
     // options codes //
     $('.optionbody .add').click(function(){
@@ -231,6 +232,7 @@ $(function(){
         $.ajax({
             url : "sendnotification.php",
             type :"POST",
+            cashe:false,
         });
     }
    setInterval(function () {

@@ -252,6 +252,7 @@
                                          $data= $object->getdatafromBoard('done');
                                         while($item = mysqli_fetch_assoc($data)){
                                         ?>
+                                    <div class="withMovment">
                                     <div 
                                         class='form-group' 
                                         id='output'>
@@ -271,6 +272,7 @@
                                             }
                                         ?>
                                     </div>
+                                </div>
                                 <?php }?>
                                 </div>
                         <div class='thewholediv'>
@@ -337,6 +339,7 @@
                                          $data2 = $object->getdatafromBoard($Name);
                                         while($item2 = mysqli_fetch_assoc($data2)){
                                         ?>
+                                    <div class="withMovment">
                                     <div 
                                         class='form-group' 
                                         id='output'>
@@ -356,10 +359,9 @@
                                             }
                                         ?>
                                     </div>
+                                </div>
                                 <?php }?>
                                 </div>
-                                
-
                         <div class='thewholediv'>
                         <span class="addnew pull-left addingnewcard">
                             &nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
@@ -392,7 +394,7 @@
                         Add anthor list
                     </span>
                 </div>
-                <div class='todo addingnewlist'>
+                <div class='todo addingnewlist' style="width:100%">
                     <div class='form-group'>
                         <input class='form-control' type='text' name='newlist' id='newlist' placeholder="Enter List title...">
                     </div>
