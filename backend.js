@@ -186,9 +186,16 @@ $(function(){
     });
     $('.Movement').click(function(){
         $(this).next('.showdirection').show(400); 
+        // alert($(this).parent().attr('class')
+        $(this).parent().css({
+            height: "116px",
+        });
     });
     $('.Movement').dblclick(function(){
          $(this).next('.showdirection').hide(400); 
+         $(this).parent().css({
+            height: "65px",
+        });
     })
     function moveCard(targetListId , cardName){
         $.ajax({
